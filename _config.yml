@@ -19,6 +19,8 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+disqus:
+  shortname: andriiliashenko
 
 minima:
   # generate social links in footer
