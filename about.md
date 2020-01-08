@@ -4,9 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm Andrii.
-
-I enjoy building software systems and writing about it.
+Writing about things I enjoy.
 
 **My interests:** 
 * distributed systems
