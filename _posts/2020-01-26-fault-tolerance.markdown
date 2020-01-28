@@ -7,7 +7,7 @@ categories: [architecture, distributed systems]
 tags: [architecture, dystributed systems, fault tolerance, hystrix, chaos engineering]
 ---
 
-<img src="/assets/posts/resilient-systems/service-and-dependecies1.png" height = "400">  
+<img src="/assets/posts/resilient-systems/service-and-dependecies1.png">  
 *A distributed system is a network of computers, which are communicating with each other by passing messages, but acting as a single computer to the end-user.*  
 
 With distributed power comes big challenges, and one of them is inevitable failures caused by distributed nature.    
@@ -25,13 +25,13 @@ How to make your system stable and tolerant to the failures?
   
 Every remote call is a risk to your system health and a single failing call can take the whole system down if not handled properly.  
 Let's review some common patterns to handle remote calls.   
-<img src="/assets/posts/resilient-systems/failed-deps.png" height = "400">    
+<img src="/assets/posts/resilient-systems/failed-deps.png">    
 
 #### Retries
 Often trying the same request again causes the request to succeed. It happens because of partial or transient failures.  
 A partial failure is when a part of requests succeed.   
 A transient failure is when a request fails for a short period of time.  
-<img src="/assets/posts/resilient-systems/retry.png" height = "300">  
+<img src="/assets/posts/resilient-systems/retry.png" style="max-width:400px">  
 But it's not always safe to retry. A retry can increase the load on the system being called. Instead of retrying immediately, you can use **exponential backoff**, where the wait time is increased exponentially after every attempt.  
 ```
 waitTime = min(maxWait, baseInterval * exponentialFactor ** attempt)
@@ -47,13 +47,15 @@ When a request is taking longer than usual, it might increase latency in your sy
 Also, the call holds on to the resources it is using for that request and during high load the server can quickly run out of the resources (memory, threads, connections, etc.).
 
 To avoid this situation set **connection and request timeouts**.  
-<img src="/assets/posts/resilient-systems/timeouts.png" height = "300">  
+
+<img src="/assets/posts/resilient-systems/timeouts.png" style="max-width:450px">  
 
 #### Circuit breakers
 When there’s an issue with a dependency, stop calling it!  
 In the normal “closed” state, the circuit breaker executes requests as usual.   
 Once the number of failures for the frequency of failures exceeds a threshold, the circuit breaker “opens” the circuit for some time.  
-<img src="/assets/posts/resilient-systems/cb.png" height = "300">
+
+<img src="/assets/posts/resilient-systems/cb.png" style="max-width:450px">
 
 #### Bulkhead
 > In a ship, a bulkhead is a dividing wall or barrier between other compartments.  
@@ -61,7 +63,8 @@ Once the number of failures for the frequency of failures exceeds a threshold, t
 
 Isolate the failure.    
 Separate thread pools dedicated to different functions (e.g. separate thread pools for each remote service), so that if one fails, the others will continue to function.   
-<img src="/assets/posts/resilient-systems/bulkheads.png" height = "350">
+
+<img src="/assets/posts/resilient-systems/bulkheads.png" style="max-width:450px">
 
 ### Respond when failure happens
 “Fail fast” is generally a good idea:
@@ -75,10 +78,10 @@ However, there are scenarios where your service can provide responses in a “fa
 Some fallback approaches:
 * **Cache**  
 Save the data that comes from remote services to a local or remote cache and reuse the cached data as a response during one of the service failure.
-<img src="/assets/posts/resilient-systems/cache.png" height = "400">
+<img src="/assets/posts/resilient-systems/cache.png" style="max-width:350px">
 * **Queue**  
 Setup a queue for the requests to a remote service to be persisted until the dependency is available.   
-<img src="/assets/posts/resilient-systems/queue.png" height = "350">
+<img src="/assets/posts/resilient-systems/queue.png" style="max-width:400px">
 * **Stubbed (default) values**  
 Return default values when personalized options can’t be retrieved.
 * **Fail silently**.  
@@ -88,16 +91,16 @@ If possible, disable the functionality that is failing.
 ### Hystrix
 [Hystrix](https://github.com/Netflix/Hystrix/) is a Netflix open-source library that helps you handle Integration Points using the techniques described before: Timeout, Circuit Breaker, Bulkhead, and without effort allows you to provide fallback options.   
 
-[<img src="/assets/posts/resilient-systems/hystrix-command-flow-chart.png" height = "400">](../assets/posts/resilient-systems/hystrix-command-flow-chart.png)   
+[<img src="/assets/posts/resilient-systems/hystrix-command-flow-chart.png" style="max-width:700px">](../assets/posts/resilient-systems/hystrix-command-flow-chart.png)   
 
 Embed the fault tolerance and latency tolerance in your system wrapping the calls to external services into HystrixCommands:   
-<img src="/assets/posts/resilient-systems/hystrix-service.png" height = "400">
+<img src="/assets/posts/resilient-systems/hystrix-service.png" style="max-width:600px">
 
 ### Testing
 #### Load testing and stress testing
 Perform load and stress testing to discover how your system behaves under the load. It might uncover unexpected issues and failures in your system.  
 Perform the testing for the long period of time to discover how your system behaves under continuous stress.  
-<img src="/assets/posts/resilient-systems/load-testing.png" height = "350">
+<img src="/assets/posts/resilient-systems/load-testing.png">
 
 #### Test for remote services failures
 * no response
