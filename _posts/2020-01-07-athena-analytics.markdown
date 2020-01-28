@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AWS S3+Athena real-time business analytics"
-date:   2020-01-07 17:23:49 +0200
+date:   2019-11-30 20:23:49 +0200
 permalink:   athena-analytics
 categories: [architecture, aws, analytics]
 tags: [architecture, metrics, aws, s3, athena]
