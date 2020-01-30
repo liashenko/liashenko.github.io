@@ -7,7 +7,7 @@ categories: [architecture, distributed systems]
 tags: [architecture, dystributed systems, fault tolerance, hystrix, chaos engineering]
 ---
 
-<center><img src="/assets/posts/resilient-systems/service-and-dependecies1.jpg"></center>   
+<center><img src="/assets/posts/resilient-systems/service-and-dependecies1.jpg" style="max-width:500px"></center>   
 *A distributed system is a network of computers, which are communicating with each other by passing messages, but acting as a single computer to the end-user.*  
 
 With distributed power comes big challenges, and one of them is inevitable failures caused by distributed nature.    
@@ -25,7 +25,7 @@ How to make your system stable and tolerant to the failures?
   
 Every remote call is a risk to your system health and a single failing call can take the whole system down if not handled properly.  
 Let's review some common patterns to handle remote calls.   
-<center><img src="/assets/posts/resilient-systems/failed-deps.jpg"></center>    
+<center><img src="/assets/posts/resilient-systems/failed-deps.jpg" style="max-width:500px"></center>    
 
 #### Retries
 Often trying the same request again causes the request to succeed. It happens because of partial or transient failures.  
@@ -90,8 +90,7 @@ If possible, disable the functionality that is failing.
 
 ### Hystrix
 [Hystrix](https://github.com/Netflix/Hystrix/) is a Netflix open-source library that helps you handle Integration Points using the techniques described before: Timeout, Circuit Breaker, Bulkhead, and without effort allows you to provide fallback options.   
-
-[<img src="/assets/posts/resilient-systems/hystrix-command-flow-chart.jpg" style="max-width:700px">](../assets/posts/resilient-systems/hystrix-command-flow-chart.jpg)   
+[<img src="/assets/posts/resilient-systems/hystrix-command-flow-chart.jpg">](../assets/posts/resilient-systems/hystrix-command-flow-chart.jpg)   
 
 Embed the fault tolerance and latency tolerance in your system wrapping the calls to external services into HystrixCommands:   
 <center><img src="/assets/posts/resilient-systems/hystrix-service.jpg" style="max-width:600px"></center>
@@ -99,8 +98,8 @@ Embed the fault tolerance and latency tolerance in your system wrapping the call
 ### Testing
 #### Load testing and stress testing
 Perform load and stress testing to discover how your system behaves under the load. It might uncover unexpected issues and failures in your system.  
-Perform the testing for the long period of time to discover how your system behaves under continuous stress.  
-<center><img src="/assets/posts/resilient-systems/load-testing.jpg"></center>
+Perform the testing for the long period of time to discover how your system behaves under continuous stress.
+<center><img src="/assets/posts/resilient-systems/load-testing.jpg" style="max-width:500px"></center>
 
 #### Test for remote services failures
 * no response
