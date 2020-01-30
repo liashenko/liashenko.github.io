@@ -57,7 +57,7 @@ In the normal “closed” state, the circuit breaker executes requests as usual
 Once the number of failures for the frequency of failures exceeds a threshold, the circuit breaker “opens” the circuit for some time.  
 
 <center><img src="/assets/posts/resilient-systems/cb.jpg" style="max-width:450px"></center>  
-#### Bulkhead
+#### Bulkheads
 > In a ship, a bulkhead is a dividing wall or barrier between other compartments.  
 > If the hull of a ship is compromised, only the damaged section fills with water, which prevents the ship from sinking.
 
