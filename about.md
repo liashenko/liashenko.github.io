@@ -4,18 +4,17 @@ title: About
 permalink: /about/
 ---
 
-**My interests:** 
-* distributed systems
-* software architecture
-* data science
-* ML
+**About this blog**  
+This blog is about Software Engineering. I'm particularly interested in the following topics:
+* Agile software development
+* Software architecture
+* Cloud computing services (e.g. AWS)
 
-**My hobbies:**
-* programming
-* movies
-* art
-* literature
-* travel
-
-
-
+**About me**   
+In my spare time I enjoy mostly the following activities:
+* Walking
+* Watching movies
+* Reading good literature (both fiction and nonfiction)
+* Visiting music gigs
+* Improvising (or jamming) on guitar
+* Traveling
