@@ -139,7 +139,7 @@ Deploy the new version of the software to a subset of the infrastructure, monito
 Rolling deployment is better than bing bang deployment because it minimizes risks (including software downtime).
 
 ### References
-1. [Principle behind the Agile Manifesto](https://agilemanifesto.org/principles.html){:target="_blank"}
+1. [Principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html){:target="_blank"}
 2. [The State of Agile Software in 2018](https://martinfowler.com/articles/agile-aus-2018.html){:target="_blank"}
 3. [Is quality worth the cost?](https://martinfowler.com/articles/is-quality-worth-cost.html){:target="_blank"}
 4. [Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html){:target="_blank"}
