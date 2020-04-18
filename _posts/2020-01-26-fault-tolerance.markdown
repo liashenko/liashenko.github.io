@@ -8,7 +8,7 @@ tags: [architecture, dystributed systems, fault tolerance, hystrix, chaos engine
 ---
 
 <center><img src="/assets/posts/resilient-systems/service-and-dependecies1.jpg" style="max-width:500px"></center>   
-*A distributed system is a network of computers, which are communicating with each other by passing messages, but acting as a single computer to the end-user.*  
+> A distributed system is a network of computers, which are communicating with each other by passing messages, but acting as a single computer to the end-user.
 
 With distributed power comes big challenges, and one of them is inevitable failures caused by distributed nature.    
 Network connections fail or degrade, servers crash or respond enormously slow, software has bugs, etc.  
@@ -75,16 +75,15 @@ Separate thread pools dedicated to different functions (e.g. separate thread poo
 
 However, there are scenarios where your service can provide responses in a “fallback mode” to reduce the impact of failure on users.  
 
-Some fallback approaches:
-* **Cache**  
+**Cache**  
 Save the data that comes from remote services to a local or remote cache and reuse the cached data as a response during one of the service failure.
 <center><img src="/assets/posts/resilient-systems/cache.jpg" style="max-width:350px"></center>
-* **Queue**  
+**Queue**  
 Setup a queue for the requests to a remote service to be persisted until the dependency is available.   
 <center><img src="/assets/posts/resilient-systems/queue.jpg" style="max-width:400px"></center>
-* **Stubbed (default) values**  
-Return default values when personalized options can’t be retrieved.
-* **Fail silently**.  
+**Stubbed (default) values**  
+Return default values when personalized options can’t be retrieved.  
+**Fail silently**.  
 Return empty or null response that can be handled by the caller (e.g. UI).    
 If possible, disable the functionality that is failing.
 
@@ -126,8 +125,7 @@ Be prepared - Gremlins come:
 * Network gremlins. Introduce latency, blackhole traffic, lose packets, fail DNS
  
 ### Conclusion
-In distributed systems failures are unavoidable by nature.  
-Keep that in mind during architecture, implementation and testing of your system.   
+In distributed systems failures are unavoidable by nature. Keep that in mind during architecture, implementation and testing of your system.   
 Handle the Integration points with Retries, Timeouts, Bulkheads and Circuit breakers.  
 Minimize failures impact on users by responding when failures happen. Leverage Caching, Queues, return default values or disable the failing functionality.  
 Test your system vigorously. Test for remote services failures.   
@@ -135,9 +133,9 @@ Break your system to make it unbreakable facilitating chaos engineering experime
 
 ### References
 1. Michael T. Nygard. Release It!: Design and Deploy Production-Ready Software 2nd Edition (2018)
-2. [Article "Fault-tolerance in a high volume distributed system" by Netflix](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a)
-3. [Article "Lessons learned from the AWS outage" by Netflix](https://netflixtechblog.com/lessons-netflix-learned-from-the-aws-outage-deefe5fd0c04)
+2. [Article "Fault-tolerance in a high volume distributed system" by Netflix](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a){:target="_blank"}
+3. [Article "Lessons learned from the AWS outage" by Netflix](https://netflixtechblog.com/lessons-netflix-learned-from-the-aws-outage-deefe5fd0c04){:target="_blank"}
 4. [Article "Exponential backoff and jitter" by AWS](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/)
-5. [Hystrix](https://github.com/Netflix/Hystrix/wiki)
-6. [Principles of chaos](http://principlesofchaos.org/)
-7. [Gremlin](https://www.gremlin.com/)
+5. [Hystrix](https://github.com/Netflix/Hystrix/wiki){:target="_blank"}
+6. [Principles of chaos](http://principlesofchaos.org/){:target="_blank"}
+7. [Gremlin](https://www.gremlin.com/){:target="_blank"}
