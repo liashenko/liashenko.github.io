@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Agile: Moving Fast"
+title:  "Agile For Software Developers"
 date:   2020-04-18 20:00:00 +0300
 permalink:   agile
 categories: [agile]
