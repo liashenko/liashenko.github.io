@@ -5,7 +5,8 @@ permalink: /about/
 ---
 
 **About this blog**  
-This blog is about Software Engineering. I'm particularly interested in the following topics:
-* Agile software development
+This blog is about Software Engineering:
+* High-quality software development
+* Large-scale distributed systems
 * Software architecture
 * Cloud computing services (e.g. AWS)
