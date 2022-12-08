@@ -1,9 +1,12 @@
 ---
 layout: post
 title:  "Agile For Software Developers"
+tagline: "gile is about moving fast in short cycles"
+description: "How to make Agile better for software developers."
 date:   2020-04-18 20:00:00 +0300
+image: assets/posts/agile/tech_debt.jpg
 permalink:   agile
-categories: [agile]
+categories: [agile, software engineering]
 tags: [agile, development, tests, refactoring, continuous deployment]
 ---
 
@@ -37,7 +40,7 @@ A few agile tools to help capturing conversations:
 
 Technical excellence is the only way to be agile, the only way to be able to adapt to changing requirements rapidly.  
 Neglecting internal software quality and building up cruft slows down the development of new features.
-<center><img src="/assets/posts/agile/tech_debt.jpg" style="width:350px"></center>
+<center><img src="/assets/posts/agile/tech_debt.jpg" alt="tech debt" style="width:350px"></center>
 
 To make the internal software quality high, consider the following good practices:
 * Automated tests to validate if the software is working as expected.
@@ -56,7 +59,7 @@ Automated tests create a feedback loop that informs developers whether the softw
 **Test Pyramid**  
 
 One key concept of automated testing is **Test Pyramid**. It’s a great representation of how to approach testing your software. 
-<center><img src="/assets/posts/agile/testing_pyramid.jpg" style="width:550px"></center>
+<center><img src="/assets/posts/agile/testing_pyramid.jpg" alt="testing pyramid" style="width:550px"></center>
 <center>Testing Pyramid (Agile) vs Ice-cream Cone (Traditional)</center>
 
 The more high-level you get the fewer tests you should have:
@@ -103,7 +106,7 @@ YAGNI is about building features that are important right now. Do not waste time
 > Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.  
 > Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
 
-<br/><center><img src="/assets/posts/agile/cd.jpg" style="width:550px"></center>
+<br/><center><img src="/assets/posts/agile/cd.jpg" alt="continious delivery" style="width:550px"></center>
 <center>Continuous delivery/deployment pipeline</center>
 Continuous delivery/deployment is a practice when software is developed and deployed into production in short cycles.
 Small releases benefit both customers and developers:

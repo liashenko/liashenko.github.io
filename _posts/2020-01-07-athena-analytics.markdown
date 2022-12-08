@@ -1,9 +1,14 @@
 ---
 layout: post
-title:  "AWS S3+Athena real-time business analytics"
+title:  "AWS S3 + Athena real-time business analytics"
 date:   2019-11-30 20:23:49 +0200
 permalink:   athena-analytics
+image: assets/posts/athena-analytics/athena.jpeg
 categories: [architecture, aws, analytics]
+tagline: "AWS S3 Athena real-time business analytics"
+description: "To make business analytics possible we need data, data that represents the right business metrics for the software (KPIs).
+Business metrics can be stored in a database, logs, files or a dedicated warehouse.
+In this article we're gonna implement real-time business analytics in AWS S3 using AWS Athena."
 tags: [architecture, metrics, aws, s3, athena]
 ---
 
@@ -29,7 +34,7 @@ How Athena works?
 Athena uses **Presto** under the hood.
 [What is Presto?](https://aws.amazon.com/big-data/what-is-presto/)
 
-<center><img src="/assets/posts/athena-analytics/bookstore.jpg" style="max-height:500px"></center>
+<center><img src="/assets/posts/athena-analytics/bookstore.jpg" alt="online bookstore" style="max-height:500px"></center>
 
 Getting back to our topic, let's imagine we have an online bookstore and we need to analyze books purchases that are processed by *PurchaseService*. 
 Let's define our purchase metrics metadata:
@@ -88,13 +93,13 @@ To create a Glue database and a table with our purchase metrics metadata we’re
 Point a Glue Crawler to the data in S3 and the crawler will extract the metadata into AWS Glue Data Catalog.
 
 The flow we've created so far:
-<center><img src="/assets/posts/athena-analytics/athena-analytics.png" style="width:700px"></center>
+<center><img src="/assets/posts/athena-analytics/athena-analytics.png" alt="aws architecture: PurchaseService - Kinesis Firehose - S3 - AWS Glue - Athena" style="width:700px"></center>
 
 The purchase metrics are in AWS S3 and purchase metrics metadata in AWS Glue Catalog, can we query it now?
 
 Yes! Let’s go to Athena and write a simple query:
 
-<center><img src="/assets/posts/athena-analytics/athena-results.png" style="width:900px"></center>
+<center><img src="/assets/posts/athena-analytics/athena-results.png"  alt="Athena query SELECT output" style="width:900px"></center>
 
 ### Conclusion
 In the end we have a simple yet powerful serverless real-time business analytics infrastructure.

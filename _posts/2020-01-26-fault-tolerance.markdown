@@ -1,13 +1,16 @@
 ---
 layout: post
 title:  "Fault-tolerance in distributed systems"
+tagline: "Fault-tolerance in distributed systems"
+description: "In distributed systems failures are unavoidable by nature. Make your components redundant, handle interaction points, dependencies, respond gracefully, test, chaos engineering."
 date:   2020-01-28 21:25:00 +0200
+image: assets/posts/resilient-systems/service-and-dependecies1.jpg
 permalink:   fault-tolerance
 categories: [architecture, distributed systems]
-tags: [architecture, dystributed systems, fault tolerance, resilience4j, chaos engineering]
+tags: [architecture, dystributed systems, resilience4j, fault tolerance, chaos engineering]
 ---
 
-<center><img src="/assets/posts/resilient-systems/service-and-dependecies1.jpg" style="width:500px"></center>   
+<center><img src="/assets/posts/resilient-systems/service-and-dependecies1.jpg"  alt="service and dependencies" style="width:500px"></center>   
 > A distributed system is a network of computers, which are communicating with each other by passing messages, but acting as a single computer to the end-user.
 
 With distributed power comes big challenges, and one of them is inevitable failures caused by distributed nature.    
@@ -25,14 +28,14 @@ How to make your system stable and tolerant to the failures?
   
 Every remote call is a risk to your system health and a single failing call can take the whole system down if not handled properly.  
 Let's review some common patterns to handle remote calls.   
-<center><img src="/assets/posts/resilient-systems/failed-deps.jpg" style="width:500px"></center>    
+<center><img src="/assets/posts/resilient-systems/failed-deps.jpg" alt="service and failed dependencies"  style="width:500px"></center>    
 
 #### Retries
 Often trying the same request again causes the request to succeed. It happens because of partial or transient failures.  
 A partial failure is when a part of requests succeed.   
 A transient failure is when a request fails for a short period of time.  
 
-<center><img src="/assets/posts/resilient-systems/retry.jpg" style="width:400px"></center>     
+<center><img src="/assets/posts/resilient-systems/retry.jpg" alt="retry requests to dependencies" style="width:400px"></center>     
 But it's not always safe to retry. A retry can increase the load on the system being called. Instead of retrying immediately, you can use **exponential backoff**, where the wait time is increased exponentially after every attempt.  
 ```
 waitTime = min(maxWait, baseInterval * exponentialFactor ** attempt)
@@ -49,14 +52,14 @@ Also, the call holds on to the resources it is using for that request and during
 
 To avoid this situation set **connection and request timeouts**.  
 
-<center><img src="/assets/posts/resilient-systems/timeouts.jpg" style="width:450px"></center>  
+<center><img src="/assets/posts/resilient-systems/timeouts.jpg" alt="timeout requests to dependencies" style="width:450px"></center>  
 
 #### Circuit breakers
 When there’s an issue with a dependency, stop calling it!  
 In the normal “closed” state, the circuit breaker executes requests as usual.   
 Once the number of failures for the frequency of failures exceeds a threshold, the circuit breaker “opens” the circuit for some time.  
 
-<center><img src="/assets/posts/resilient-systems/cb.jpg" style="width:450px"></center>  
+<center><img src="/assets/posts/resilient-systems/cb.jpg" alt="circuit breaker for requests to dependencies"  style="width:450px"></center>  
 #### Bulkheads
 > In a ship, a bulkhead is a dividing wall or barrier between other compartments.  
 > If the hull of a ship is compromised, only the damaged section fills with water, which prevents the ship from sinking.
@@ -64,7 +67,7 @@ Once the number of failures for the frequency of failures exceeds a threshold, t
 Isolate the failure.    
 Separate thread pools dedicated to different functions (e.g. separate thread pools for each remote service), so that if one fails, the others will continue to function.   
 
-<center><img src="/assets/posts/resilient-systems/bulkheads.jpg" style="width:450px"></center>   
+<center><img src="/assets/posts/resilient-systems/bulkheads.jpg" alt="bulkheads for requests to dependencies"  style="width:450px"></center>   
 
 ### Respond when failure happens
 “Fail fast” is generally a good idea:
@@ -77,10 +80,10 @@ However, there are scenarios where your service can provide responses in a “fa
 
 **Cache**  
 Save the data that comes from remote services to a local or remote cache and reuse the cached data as a response during one of the service failure.
-<center><img src="/assets/posts/resilient-systems/cache.jpg" style="width:350px"></center>
+<center><img src="/assets/posts/resilient-systems/cache.jpg" alt="cache"  style="width:350px"></center>
 **Queue**  
 Setup a queue for the requests to a remote service to be persisted until the dependency is available.   
-<center><img src="/assets/posts/resilient-systems/queue.jpg" style="width:400px"></center>
+<center><img src="/assets/posts/resilient-systems/queue.jpg" alt="queue" style="width:400px"></center>
 **Stubbed (default) values**  
 Return default values when personalized options can’t be retrieved.  
 **Fail silently**.  
@@ -95,7 +98,7 @@ If possible, disable the functionality that is failing.
 #### Load testing and stress testing
 Perform load and stress testing to discover how your system behaves under the load. It might uncover unexpected issues and failures in your system.  
 Perform the testing for the long period of time to discover how your system behaves under continuous stress.
-<center><img src="/assets/posts/resilient-systems/load-testing.jpg" style="width:500px"></center>
+<center><img src="/assets/posts/resilient-systems/load-testing.jpg"  alt="load testing" style="width:500px"></center>
 
 #### Test for remote services failures
 * no response
