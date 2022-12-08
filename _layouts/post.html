@@ -47,12 +47,6 @@ post_class: post-template
                 </small>
             </p>
 
-            {% if include.pageurl != nil and include.pageurl != '' %}
-    {% assign pageurl = include.pageurl %}
-{% else %}
-    {% assign pageurl = page.url %}
-{% endif %}
-
 
 <b>Share on: </b><div id="share-buttons">
     <a class="d-inline-block social-icon" target="_blank" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.social.twitter_username }}">
@@ -73,18 +67,20 @@ post_class: post-template
   </div>
             
             <!-- Prev/Next -->
+            {% if page.previous.url or page.next.url%}
             <div class="row PageNavigation mt-4 prevnextlinks d-flex justify-content-between">
-              {% if page.previous.url %}
                 <div class="col-md-6 rightborder pl-0">
-                    <a class="thepostlink" href="{{page.previous.url | absolute_url}}">&laquo; {{page.previous.title}}</a>
+                    {% if page.previous.url %}
+                    <a class="thepostlink" href="{{page.previous.url }}">&laquo; {{page.previous.title}}</a>
+                    {% endif %}
                 </div>
-              {% endif %}
-              {% if page.next.url %}
                 <div class="col-md-6 text-right pr-0">
-                    <a class="thepostlink" href="{{page.next.url | absolute_url}}">{{page.next.title}} &raquo;</a>
+                    {% if page.next.url %}
+                    <a class="thepostlink" href="{{page.next.url }}">{{page.next.title}} &raquo;</a>
+                    {% endif %}
                 </div>
-              {% endif %}
             </div>
+            {% endif %}
             <!-- End Prev/Next -->
         
 

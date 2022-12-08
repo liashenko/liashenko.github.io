@@ -88,13 +88,13 @@ To create a Glue database and a table with our purchase metrics metadata we’re
 Point a Glue Crawler to the data in S3 and the crawler will extract the metadata into AWS Glue Data Catalog.
 
 The flow we've created so far:
-<center><img src="/assets/posts/athena-analytics/athena-analytics.png" style="max-width:700px"></center>
+<center><img src="/assets/posts/athena-analytics/athena-analytics.png" style="width:700px"></center>
 
 The purchase metrics are in AWS S3 and purchase metrics metadata in AWS Glue Catalog, can we query it now?
 
 Yes! Let’s go to Athena and write a simple query:
 
-<center><img src="/assets/posts/athena-analytics/athena-results.png" style="max-width:900px"></center>
+<center><img src="/assets/posts/athena-analytics/athena-results.png" style="width:900px"></center>
 
 ### Conclusion
 In the end we have a simple yet powerful serverless real-time business analytics infrastructure.
