@@ -3,9 +3,10 @@ title: "Blog"
 layout: default
 permalink: "/blog.html"
 ---
-
+<div class="container">
 {% for post in site.posts %}
-    <div class="col mb-5">
+    <div class="col mb-5" >
     {% include postbox.html %}
     </div>
 {% endfor %}
+</div>

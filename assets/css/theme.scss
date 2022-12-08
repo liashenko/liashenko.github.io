@@ -28,13 +28,17 @@ body {
     width: 80%;
     margin: auto;
 }
+@media screen and (max-width: 800px) {
+    body {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      font-size:14px;
+    }
+  }
 .serif-font {
     font-family:PT Serif;
 }
 @media (max-width: 1366px) {
     .container-xl, .container-lg, .container-md, .container-sm, .container {
-        width:90%;
-        max-width:90%;
         padding:0 25px;
     }
 }
@@ -110,7 +114,6 @@ small, .small {
 	width: 100%;
 	top: 0;
 	left: 0;
-	z-index: 9999;
 	-webkit-transition : all 0.3s ease-out;
 	transition : all 0.3s ease-out;
     background:#fff;
@@ -321,15 +324,6 @@ blockquote {
     margin-bottom: 2rem;
 }
 
-.full-width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
 @media (max-width:1024px) {
 	.post-top-meta .col-md-10 {
 		text-align:center;
@@ -443,12 +437,6 @@ ul.tags li a:hover {
 }
 .graybg.authorpage {
 	border-top:1px solid #f0f0f0;
-}
-.authorpostbox {
-	width:760px;
-	margin:0px auto;
-	margin-bottom:1.5rem;
-	max-width:100%;
 }
 .authorpostbox .img-thumb {
 	width:100%;
