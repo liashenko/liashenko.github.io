@@ -21,7 +21,7 @@ Software developers, customers and everyone interested in making the product exp
 **Agile is about technical excellence.**  
 Software internal quality should be high to be able to move fast and change the direction rapidly.
 
-### Conversations
+# Conversations
 >Business people and developers must work together daily throughout the project.
 
 * Do we solve the right problem?
@@ -34,7 +34,7 @@ A few agile tools to help capturing conversations:
 * A **user story** is a software feature described from an end-user perspective. A user story state the type of user, what they want and why.
 * **Acceptance tests** are tests that validate how the feature should work. They usually go hand in hand with user stories. Working from concrete acceptance tests helps to understand what’s being asked for.
 
-### Technical excellence
+# Technical excellence
 > Welcome changing requirements.  
 > Continuous attention to technical excellence and good design enhances agility. 
 
@@ -48,7 +48,7 @@ To make the internal software quality high, consider the following good practice
 * YAGNI (**You aren’t gonna need it**) - build only things that are important now.
 * Continuous delivery/deployment.
 
-#### Automated Testing
+## Automated Testing
 Instead of testing manually the same thing over and over every time, automate your tests.  
 Automated tests give developers confidence to make code changes and it allows to move fast.  
 Automated tests create a feedback loop that informs developers whether the software is working or not. The ideal feedback loop is:
@@ -84,7 +84,7 @@ UI (end-to-end) tests verify the system as a whole from a user perspective.
 End-to-end tests are more flaky by nature and hard to maintain. The good practice is to have the minimum of them. Automate the most important user steps that reflect the core value of your software.  
 For example, the core steps for an online store: *search a product, add a product to cart, checkout*.
 
-#### Refactoring
+## Refactoring
 > When you want to make a change, first, make the change easy. (Warning, this may be hard.) Then make the easy change.
 
 Refactoring is about making software design simple to understand and easy to change. 
@@ -94,7 +94,7 @@ Refactoring is about making software design simple to understand and easy to cha
 
 For more about refactoring, check out this [cool resource.](https://refactoring.guru/refactoring){:target="_blank"}
 
-#### YAGNI
+## YAGNI
 > Simplicity - the art of maximizing the amount of work not done--is essential.
 
 YAGNI is about building features that are important right now. Do not waste time on building something in advance. Don’t try to make the software do everything from the beginning. Don’t make your code bloated and complicated if not needed. Martin Fowler has a great mapping of the costs building features in advance:
@@ -102,7 +102,7 @@ YAGNI is about building features that are important right now. Do not waste time
 * Right feature, built wrong - cost of repair, cost of carry.
 * Right feature - cost of carry.
 
-#### Continuous delivery/deployment
+## Continuous delivery/deployment
 > Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.  
 > Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
 
@@ -141,7 +141,7 @@ if (featureService.isEnabled("NewFeature")) {
 Deploy the new version of the software to a subset of the infrastructure, monitor and rollback if needed.  
 Rolling deployment is better than bing bang deployment because it minimizes risks (including software downtime).
 
-### References
+# References
 1. [Principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html){:target="_blank"}
 2. [The State of Agile Software in 2018](https://martinfowler.com/articles/agile-aus-2018.html){:target="_blank"}
 3. [Is quality worth the cost?](https://martinfowler.com/articles/is-quality-worth-cost.html){:target="_blank"}

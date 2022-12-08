@@ -101,10 +101,10 @@ Yes! Let’s go to Athena and write a simple query:
 
 <center><img src="/assets/posts/athena-analytics/athena-results.png"  alt="Athena query SELECT output" style="width:900px"></center>
 
-### Conclusion
+# Conclusion
 In the end we have a simple yet powerful serverless real-time business analytics infrastructure.
 
-### References
+# References
 1. [https://docs.aws.amazon.com/athena/latest/ug/what-is.html](https://docs.aws.amazon.com/athena/latest/ug/what-is.html)
 2. [https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html]([https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html])
 3. [https://aws.amazon.com/premiumsupport/knowledge-center/error-json-athena/]([https://aws.amazon.com/premiumsupport/knowledge-center/error-json-athena/])

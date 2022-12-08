@@ -23,14 +23,14 @@ How to make your system stable and tolerant to the failures?
 * **Test your system** to discover its behavior under pressure.
 * Embrace the chaos to bring order in your system facilitating **Chaos Engineering** experiments.
 
-### Handle your Interaction Points
+# Handle your Interaction Points
 > Integration points are the number-one killer of systems.
   
 Every remote call is a risk to your system health and a single failing call can take the whole system down if not handled properly.  
 Let's review some common patterns to handle remote calls.   
 <center><img src="/assets/posts/resilient-systems/service-failed-dep.png" alt="service and failed dependencies"></center>    
 
-#### Retries
+## Retries
 Often trying the same request again causes the request to succeed. It happens because of partial or transient failures.  
 A partial failure is when a part of requests succeed.   
 A transient failure is when a request fails for a short period of time.  
@@ -46,7 +46,7 @@ The solution is **jitter**. Jitter adds randomness to the backoff to spread the 
 waitTime = rand(0, min(maxWait, baseInterval * exponentialFactor ** attempt))
 ``` 
 
-#### Timeouts 
+## Timeouts 
 When a request is taking longer than usual, it might increase latency in your system (and fail eventually).  
 Also, the call holds on to the resources it is using for that request and during high load the server can quickly run out of the resources (memory, threads, connections, etc.).
 
@@ -54,7 +54,7 @@ To avoid this situation set **connection and request timeouts**.
 
 <center><img src="/assets/posts/resilient-systems/timeout.png" alt="timeout requests to dependencies" ></center>  
 
-#### Circuit breakers
+## Circuit breakers
 When there’s an issue with a dependency, stop calling it!  
 In the normal “closed” state, the circuit breaker executes requests as usual.   
 Once the number of failures for the frequency of failures exceeds a threshold, the circuit breaker “opens” the circuit for some time.  
@@ -69,7 +69,7 @@ Separate thread pools dedicated to different functions (e.g. separate thread poo
 
 <center><img src="/assets/posts/resilient-systems/bulkheads.png" alt="bulkheads for requests to dependencies" ></center>   
 
-### Respond when failure happens
+# Respond when failure happens
 “Fail fast” is generally a good idea:
 * no increased latency
 * no risk for the whole system to halt
@@ -90,22 +90,22 @@ Return default values when personalized options can’t be retrieved.
 Return empty or null response that can be handled by the caller (e.g. UI).    
 If possible, disable the functionality that is failing.
 
-### Resilience4j
+# Resilience4j
 [Resilience4j](https://resilience4j.readme.io/docs/getting-started) is a lightweight fault tolerance library designed for functional programming. Resilience4j provides higher-order functions (decorators) to enhance any functional interface, lambda expression or method reference with a <b>Circuit Breaker, Rate Limiter, Retry or Bulkhead</b>.   
 
 
-### Testing
-#### Load testing and stress testing
+# Testing
+## Load testing and stress testing
 Perform load and stress testing to discover how your system behaves under the load. It might uncover unexpected issues and failures in your system.  
 Perform the testing for the long period of time to discover how your system behaves under continuous stress.
 <center><img src="/assets/posts/resilient-systems/load-testing.png"  alt="load testing" ></center>
 
-#### Test for remote services failures
+## Test for remote services failures
 * no response
 * failed response
 * slow response
 
-#### Chaos engineering (resilience testing)
+## Chaos engineering (resilience testing)
 > Chaos Engineering is the discipline of experimenting on a system in order to build confidence in the system’s capability to withstand turbulent conditions in production.
 
 Facilitate Chaos Engineering experiments to understand the system robustness and discover the system weaknesses.  
@@ -116,7 +116,7 @@ Facilitate Chaos Engineering experiments to understand the system robustness and
 > 3. Introduce variables that reflect real world events like servers that crash, hard drives that malfunction, network connections that are severed, etc.
 > 4. Try to disprove the hypothesis by looking for a difference in steady state between the control group and the experimental group.
 
-#### Gremlin
+## Gremlin
 [Gremlin](https://www.gremlin.com) is a chaos engineering platform. Gremlin provides the framework to safely and simply simulate real outages.
 
 Be prepared - Gremlins come:  
@@ -124,14 +124,14 @@ Be prepared - Gremlins come:
 * State gremlins. Reboot hosts, kill processes, travel in time
 * Network gremlins. Introduce latency, blackhole traffic, lose packets, fail DNS
  
-### Conclusion
+# Conclusion
 In distributed systems failures are unavoidable by nature. Keep that in mind during architecture, implementation and testing of your system.   
 Handle the Integration points with Retries, Timeouts, Bulkheads and Circuit breakers.  
 Minimize failures impact on users by responding when failures happen. Leverage Caching, Queues, return default values or disable the failing functionality.  
 Test your system vigorously. Test for remote services failures.   
 Break your system to make it unbreakable facilitating chaos engineering experiments.  
 
-### References
+# References
 1. Michael T. Nygard. Release It!: Design and Deploy Production-Ready Software 2nd Edition (2018)
 2. [Article "Fault-tolerance in a high volume distributed system" by Netflix](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a){:target="_blank"}
 3. [Article "Lessons learned from the AWS outage" by Netflix](https://netflixtechblog.com/lessons-netflix-learned-from-the-aws-outage-deefe5fd0c04){:target="_blank"}
