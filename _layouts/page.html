@@ -1,10 +1,17 @@
 ---
 layout: default
 ---
-<article class="post">
+<!-- Post Featured Image -->
+{% if page.image %}
+<div class="text-center mx-auto mb-5">
+  <img class="featured-image text-center mx-auto rounded" src="{{ site.baseurl }}/{{ page.image }}" alt="{{ page.title }}">
+</div>
+{% endif %}
+<!-- End Featured Image -->
 
-  <div class="post-content">
-    {{ content }}
+<div class="col">
+  <div class="article-post serif-font">
+    {{content}}
   </div>
 
-</article>
+</div>

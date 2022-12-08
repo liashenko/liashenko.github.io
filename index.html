@@ -1,0 +1,32 @@
+---
+title: Andrii Liashenko
+layout: default
+background: '/img/bg-index.jpg'
+---
+
+<!-- Home Intro
+================================================== -->
+{% if page.url == "/" %} 
+<div class="rounded mb-5 ">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-md-6">
+      <div class="about-info">Hi 👋,<br> <span class="info-name">I'm Andrii,</span></div>
+         Software Engineer with <b>6+</b> years of experience.<br>
+         Currently working at Datadog on CI Observability.<br>
+         I'm experienced in <span class="font-weight-bold">Backend development, Cloud, AWS, Distributed systems, Databases, DevOps, CI/CD</span>.
+         
+      {% include experience.html %}
+    </div>
+    <div class="col-md-6 text-right pl-0 pl-lg-4">
+      <img class="intro" height="420px" src="{{site.baseurl}}/assets/images/coding.png">      
+    </div>
+  </div>
+</div>
+{% endif %}
+
+  {% for post in site.posts limit:3 %}
+      <div class="col mb-5">
+      {% include postbox.html %}
+      </div>
+  {% endfor %}
+  <a href="{{site.baseurl}}/blog" class="btn btn-primary text-white px-5 btn-lg">All Posts</a>

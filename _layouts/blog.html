@@ -1,0 +1,11 @@
+---
+title: "Blog"
+layout: default
+permalink: "/blog.html"
+---
+
+{% for post in site.posts %}
+    <div class="col mb-5">
+    {% include postbox.html %}
+    </div>
+{% endfor %}

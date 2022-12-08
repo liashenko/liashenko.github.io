@@ -37,7 +37,7 @@ A few agile tools to help capturing conversations:
 
 Technical excellence is the only way to be agile, the only way to be able to adapt to changing requirements rapidly.  
 Neglecting internal software quality and building up cruft slows down the development of new features.
-<center><img src="/assets/posts/agile/tech_debt.jpg" style="max-width:350px"></center><br/>
+<center><img src="/assets/posts/agile/tech_debt.jpg" style="max-width:350px"></center>
 
 To make the internal software quality high, consider the following good practices:
 * Automated tests to validate if the software is working as expected.
@@ -57,7 +57,7 @@ Automated tests create a feedback loop that informs developers whether the softw
 
 One key concept of automated testing is **Test Pyramid**. It’s a great representation of how to approach testing your software. 
 <center><img src="/assets/posts/agile/testing_pyramid.jpg" style="max-width:550px"></center>
-<center>Testing Pyramid (Agile) vs Ice-cream Cone (Traditional)</center><br/>
+<center>Testing Pyramid (Agile) vs Ice-cream Cone (Traditional)</center>
 
 The more high-level you get the fewer tests you should have:
 * Write lots of small and fast unit tests. 
@@ -104,7 +104,7 @@ YAGNI is about building features that are important right now. Do not waste time
 > Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
 
 <br/><center><img src="/assets/posts/agile/cd.jpg" style="max-width:550px"></center>
-<center>Continuous delivery/deployment pipeline</center><br/>
+<center>Continuous delivery/deployment pipeline</center>
 Continuous delivery/deployment is a practice when software is developed and deployed into production in short cycles.
 Small releases benefit both customers and developers:
 * Customers get working features faster.
