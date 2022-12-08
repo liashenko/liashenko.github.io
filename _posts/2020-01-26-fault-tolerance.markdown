@@ -4,7 +4,7 @@ title:  "Fault-tolerance in distributed systems"
 date:   2020-01-28 21:25:00 +0200
 permalink:   fault-tolerance
 categories: [architecture, distributed systems]
-tags: [architecture, dystributed systems, fault tolerance, hystrix, chaos engineering]
+tags: [architecture, dystributed systems, fault tolerance, resilience4j, chaos engineering]
 ---
 
 <center><img src="/assets/posts/resilient-systems/service-and-dependecies1.jpg" style="max-width:500px"></center>   
@@ -87,12 +87,9 @@ Return default values when personalized options can’t be retrieved.
 Return empty or null response that can be handled by the caller (e.g. UI).    
 If possible, disable the functionality that is failing.
 
-### Hystrix
-[Hystrix](https://github.com/Netflix/Hystrix/) is a Netflix open-source library that helps you handle Integration Points using the techniques described before: Timeout, Circuit Breaker, Bulkhead, and without effort allows you to provide fallback options.   
-[<img src="/assets/posts/resilient-systems/hystrix-command-flow-chart.jpg">](../assets/posts/resilient-systems/hystrix-command-flow-chart.jpg)   
+### Resilience4j
+[Resilience4j](https://resilience4j.readme.io/docs/getting-started) is a lightweight fault tolerance library designed for functional programming. Resilience4j provides higher-order functions (decorators) to enhance any functional interface, lambda expression or method reference with a <b>Circuit Breaker, Rate Limiter, Retry or Bulkhead</b>.   
 
-Embed the fault tolerance and latency tolerance in your system wrapping the calls to external services into HystrixCommands:   
-<center><img src="/assets/posts/resilient-systems/hystrix-service.jpg" style="max-width:600px"></center>
 
 ### Testing
 #### Load testing and stress testing
@@ -136,6 +133,6 @@ Break your system to make it unbreakable facilitating chaos engineering experime
 2. [Article "Fault-tolerance in a high volume distributed system" by Netflix](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a){:target="_blank"}
 3. [Article "Lessons learned from the AWS outage" by Netflix](https://netflixtechblog.com/lessons-netflix-learned-from-the-aws-outage-deefe5fd0c04){:target="_blank"}
 4. [Article "Exponential backoff and jitter" by AWS](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/)
-5. [Hystrix](https://github.com/Netflix/Hystrix/wiki){:target="_blank"}
+5. [Resilience4j](https://resilience4j.readme.io/docs/getting-started){:target="_blank"}
 6. [Principles of chaos](http://principlesofchaos.org/){:target="_blank"}
 7. [Gremlin](https://www.gremlin.com/){:target="_blank"}

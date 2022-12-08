@@ -29,7 +29,7 @@ How Athena works?
 Athena uses **Presto** under the hood.
 [What is Presto?](https://aws.amazon.com/big-data/what-is-presto/)
 
-![bookstore](/assets/posts/athena-analytics/bookstore.jpg)
+<center><img src="/assets/posts/athena-analytics/bookstore.jpg" style="max-height:500px"></center>
 
 Getting back to our topic, let's imagine we have an online bookstore and we need to analyze books purchases that are processed by *PurchaseService*. 
 Let's define our purchase metrics metadata:
@@ -88,13 +88,13 @@ To create a Glue database and a table with our purchase metrics metadata we’re
 Point a Glue Crawler to the data in S3 and the crawler will extract the metadata into AWS Glue Data Catalog.
 
 The flow we've created so far:
-![AWS S3 + Athena real-time business analytics](/assets/posts/athena-analytics/athena-analytics.png)
+<center><img src="/assets/posts/athena-analytics/athena-analytics.png" style="max-width:700px"></center>
 
 The purchase metrics are in AWS S3 and purchase metrics metadata in AWS Glue Catalog, can we query it now?
 
 Yes! Let’s go to Athena and write a simple query:
 
-![Athena query](/assets/posts/athena-analytics/athena-results.png)
+<center><img src="/assets/posts/athena-analytics/athena-results.png" style="max-width:900px"></center>
 
 ### Conclusion
 In the end we have a simple yet powerful serverless real-time business analytics infrastructure.

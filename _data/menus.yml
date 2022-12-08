@@ -1,0 +1,18 @@
+# Top Menu
+topmenu:
+
+- title: About
+  url: "about/"
+
+- title: Blog
+  url: "blog/"
+
+
+# Footer Menu
+footermenu:
+
+- title: About
+  url: "about/"
+
+- title: Blog
+  url: "blog/"
