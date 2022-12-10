@@ -6,13 +6,13 @@ permalink: "/about/"
 
 Hi 👋! 
 
-My name is Andrii Liashenko, I'm a Software Engineer with 6+ years of experience, mostly working on the backend, distributed systems, AWS. 
+My name is Andrii Liashenko, I'm a Software Engineer with 6+ years of experience, mostly working on the backend, and distributed systems. 
 
-Currently I'm working at Datadog on [CI Observability](https://www.datadoghq.com/product/ci-cd-monitoring/).
+Currently I'm at Datadog working on [CI Observability](https://www.datadoghq.com/product/ci-cd-monitoring/).
 >Tech stack: Java, Go, Kubernetes, Kafka, PostgreSQL, AWS.
 
-Before I was developing systems to orchestrate and automate review dangerous and restricted products at Amazon.
+Before I was at Amazon building systems to orchestrate and automate review dangerous and restricted products.
 >Tech stack: Java, AWS (API Gateway, Lambda, DynamoDB, S3, SQS, RDS, Fargate, EC2, etc.), SQL,  Javascript.
 
-Before Amazon I was developing daily and sponsored Snapchat filters, and optimizing the camera Core libraries, improving the app performance at Snap Inc.
+Before I worked at Snap creating daily and sponsored Snapchat filters, and optimizing the camera Core libraries, improving the app performance.
 >Tech stack: C++, Objective-C, Javascript.

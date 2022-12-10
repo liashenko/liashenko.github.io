@@ -6,20 +6,12 @@ permalink:   athena-analytics
 image: assets/posts/athena-analytics/athena.jpeg
 categories: [architecture, aws, analytics]
 tagline: "AWS S3 Athena real-time business analytics"
-description: "To make business analytics possible we need data, data that represents the right business metrics for the software (KPIs).
-Business metrics can be stored in a database, logs, files or a dedicated warehouse.
-In this article we're gonna implement real-time business analytics in AWS S3 using AWS Athena."
+description: "In this article we're gonna implement real-time business analytics in AWS S3 using AWS Athena."
 tags: [architecture, metrics, aws, s3, athena]
 ---
 
-Business analytics is crucial:
-* It provides business people a view on the current status of your software.
-* It is the key to the data-driven door <sub>oh, what a pun</sub>
- 
-To make business analytics possible we need data, data that represents the right business metrics for the software (KPIs).
-Business metrics can be stored in a database, logs, files or a dedicated warehouse.
-
-In this article I’d like to show you real-time business analytics in AWS S3 using AWS Athena.
+Business metrics are stored in a database, logs, files or a dedicated warehouse.
+In this article we're going to implement real-time business analytics in AWS S3 using AWS Athena.
 
 **AWS S3** is a simple object storage service. 
 It is highly available (99.9%) and durable ( 99.999999999%).
@@ -36,8 +28,9 @@ Athena uses **Presto** under the hood.
 
 <center><img src="/assets/posts/athena-analytics/bookstore.jpg" alt="online bookstore" style="max-height:500px"></center>
 
-Getting back to our topic, let's imagine we have an online bookstore and we need to analyze books purchases that are processed by *PurchaseService*. 
-Let's define our purchase metrics metadata:
+Getting back to our topic, let's say we have an online bookstore, and we need business metrics for books purchases. Books purchases are processed by *PurchaseService*. 
+
+Let's define the metrics metadata:
 ```javascript
 {
     "bookId": "ec437d98-455d-4fec-8dbe-2c2630454bdd", 
@@ -50,7 +43,6 @@ Let's define our purchase metrics metadata:
     "purchaseTimestamp": 1575121641
 }
 ```
-Good enough to make different kind of business analytics.
 
 Now we can publish our purchase metrics directly to S3, but **AWS Kinesis Firehose** is better and here is why:
 * Firehose buffers incoming records and delivers in batches.
